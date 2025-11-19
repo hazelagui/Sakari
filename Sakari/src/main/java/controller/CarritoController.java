@@ -27,7 +27,7 @@ public class CarritoController {
             model.addAttribute("mensaje", "Error al cargar el carrito");
         }
         
-        return "carrito";
+        return "carrito/carrito";  // Cambio aquí
     }
 
     @PostMapping("/agregar")

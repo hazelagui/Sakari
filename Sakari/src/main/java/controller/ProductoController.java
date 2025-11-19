@@ -35,13 +35,13 @@ public class ProductoController {
         }
         
         model.addAttribute("categorias", categoriaService.listarActivas());
-        return "productos";
+        return "productos/lista";  // Cambio aquí
     }
 
     @GetMapping("/{id}")
     public String detalleProducto(@PathVariable Long id, Model model) {
         model.addAttribute("producto", productoService.buscarPorId(id)
                 .orElseThrow(() -> new RuntimeException("Producto no encontrado")));
-        return "producto-detalle";
+        return "productos/detalle";  // Cambio aquí
     }
 }

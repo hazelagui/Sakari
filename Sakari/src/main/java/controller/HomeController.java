@@ -18,26 +18,26 @@ public class HomeController {
     public String inicio(Model model) {
         model.addAttribute("productos", productoService.listarDisponibles());
         model.addAttribute("categorias", categoriaService.listarActivas());
-        return "index";
+        return "publico/index";  // Cambio aquí
     }
 
     @GetMapping("/quienes-somos")
     public String quienesSomos() {
-        return "quienes-somos";
+        return "publico/quienes-somos";  // Cambio aquí
     }
 
     @GetMapping("/contacto")
     public String contacto() {
-        return "contacto";
+        return "publico/contacto";  // Cambio aquí
     }
 
     @GetMapping("/politicas-privacidad")
     public String politicasPrivacidad() {
-        return "politicas-privacidad";
+        return "publico/politicas-privacidad";  // Cambio aquí
     }
 
     @GetMapping("/terminos-condiciones")
     public String terminosCondiciones() {
-        return "terminos-condiciones";
+        return "publico/terminos-condiciones";  // Cambio aquí
     }
 }

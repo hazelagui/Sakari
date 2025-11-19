@@ -34,13 +34,13 @@ public class AuthController {
             model.addAttribute("mensaje", "Sesión cerrada exitosamente");
         }
         
-        return "login";
+        return "auth/login";  // Cambio aquí
     }
 
     @GetMapping("/registro")
     public String mostrarRegistro(Model model) {
         model.addAttribute("usuario", new Usuario());
-        return "registro";
+        return "auth/registro";  // Cambio aquí
     }
 
     @PostMapping("/registro")
@@ -51,7 +51,7 @@ public class AuthController {
             Model model) {
         
         if (result.hasErrors()) {
-            return "registro";
+            return "auth/registro";  // Cambio aquí
         }
 
         try {
@@ -61,7 +61,7 @@ public class AuthController {
             return "redirect:/login";
         } catch (RuntimeException e) {
             model.addAttribute("error", e.getMessage());
-            return "registro";
+            return "auth/registro";  // Cambio aquí
         }
     }
 }

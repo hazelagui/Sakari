@@ -17,6 +17,6 @@ public class PersonalizacionController {
     @GetMapping
     public String personalizaciones(Model model) {
         model.addAttribute("productosPersonalizables", productoService.listarPersonalizables());
-        return "personalizaciones";
+        return "productos/personalizaciones";  // Cambio aquí
     }
 }
